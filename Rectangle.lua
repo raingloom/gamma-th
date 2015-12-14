@@ -9,8 +9,8 @@
 	Methods should be pretty self-explanatory.
 ]]
 
-local current_folder = (...):gsub('%.[^%.]+$', '')
-local Rectangle = require(current_folder .. 'RectangleStruct'):subclass'Rectangle'
+local prefix = ... and (...):match '(.-%.?)[^%.]+$' or ''
+local Rectangle = require(prefix .. 'RectangleStruct'):subclass'Rectangle'
 
 
 local max, min = math.max, math.min
